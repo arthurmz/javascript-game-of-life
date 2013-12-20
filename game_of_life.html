@@ -1,0 +1,50 @@
+<html>
+<head>
+</head>
+
+
+<body>
+
+<div style="width:600px; height:400px; margin: 0 auto; padding: 5px;"> 
+	<canvas id="GameCanvas" width="600" height="400" style="border:1px solid #c3c3c3;">
+	Please update your browser.
+	</canvas>
+</div>
+
+<script>
+var c=document.getElementById("GameCanvas");
+var ctx=c.getContext("2d");
+
+
+ctx.fillStyle="#92ABAC";
+ctx.fillRect(0,0,600,400);
+
+ctx.fillStyle="#FFFFFF";
+for(var i=0; i< 600; i++){
+	for(var j=0; j < 400;j++){
+		ctx.fillRect(i*11,j*11,10,10);
+	}
+}
+//data
+
+var ite = 0;
+var jte = 0;
+ctx.fillStyle="#000000";
+//end data
+
+window.setInterval(function(){gameOfLife()}, 100);
+
+
+
+function gameOfLife(){
+	ctx.fillRect(ite*11,jte*11,10,10);
+	ite++;
+	jte++;
+}
+
+
+</script>
+
+</body>
+
+</html>
